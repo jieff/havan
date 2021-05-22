@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--
+        Desafio de Programação Jornada Labs HAVAN
+        Idealizadora: ProWay Blumenau Sc
+        Autor: Jieff Cavalcanti Neves
+        Data 20/05/2021
+        jieff.cavalcanti@gmail.com
+        github: https://github.com/jieff
+
+    -->
+    <!-- meta tag requerida para acentuação -->
+    <meta charset="utf-8">
+    
+    <!--Fonts Google-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!--Custom CSS-->
+    <style>
+            *{font-family: 'Poppins', sans-serif;margin: 0;padding: 0;}
+            .right h1{font-size: 42px;margin: 100px 0 0 60px;}
+            .right p {margin-left: 60px;}
+            .right button{height: 60px;width: 190px;border-radius: 8px;margin-left: 60px;}
+            .left h4{margin-top: 100px;}
+            .left form{height: 65vh;background-color: #342b47;width: 380px;margin: 20px 0 0 70px;clear: both;border-radius: 8px;padding: 30px;}
+            .left form input{width: 100%;border-radius: 6px;height: 40px;padding: 8px;border: none;margin-bottom: 10px;background-color: #003366;color: yellow;}
+            .left form div {width: 100%;margin-bottom: 10px;height: 60px;padding: 30px 0 0 8px;}
+            .color0{background-color: #003366;color: yellow;}
+            .color1 {background-color: #4a142d;color: yellow;}
+            .color2{background-color: #8c0d28;color: yellow;}
+            .color3{color:#ffff00;}
+    </style>
+    <title>CONVERSOR DE MOEDAS</title>
+</head>
+
+<body>
+
+
+    <!--Section-->
+    <section id="main-section">
+        <div class="container">
+            <div class="row">
+                <div class="col col-sm-6 right">
+                    <h1>Desafio Programação Jornada Labs Havan</h1>
+                    <p>
+                        ProWay Maio 2021 - Blumenau, Santa Catarina<br>
+                        Jieff Cavalcanti Neves 47 97400-2478
+                    </p>
+                    <a href="../index.html"> <button>Voltar</button></a>
+                </div>
+                <div class="col col-sm-6 left">
+                    <h4 class="text-center">Converter Moedas</h4>
+                    <form>
+                        <input type="number" id="valorInserido" placeholder="Entre como valor em Real" />
+                        <label class="color3">BRL ( Real )</label>
+                        <div id="realId" class="color0"></div>
+                        <label class="color3">USD ( Dólar Americano )</label>
+                        <div id="dolarId" class="color1"></div>
+                        <label class="color3">EUR ( Euro )</label>
+                        <div id="euroId" class="color2"></div>
+                        <div></div>
+                        Fonte: uol.com | cotado em 19/05/2021
+                    </form>
+                </div>
+                    
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript-->
+    <script>
+
+            //lista de moedas (origem e destino)
+            var moedas = {real: 1, dolar: 5.316, euro: 6.47}
+            
+            const inserido = document.getElementById('valorInserido')
+            inserido.addEventListener('input', function (event){
+            let valor = event.target.value
+
+            let valorReal = document.getElementById('realId')
+            //valor convertido na moeda de destino com precisão de centavos
+            valorReal.innerHTML = (valor * moedas.real).toFixed(2)
+
+            let valorDolar = document.getElementById('dolarId')
+            //valor convertido na moeda de destino com precisão de centavos
+            valorDolar.innerHTML = (valor / moedas.dolar).toFixed(2)
+ 
+            let valorEuro = document.getElementById("euroId")
+            //valor convertido na moeda de destino com precisão de centavos
+            valorEuro.innerHTML = (valor / moedas.euro).toFixed(2)
+
+        })
+    </script>
+</body>
+
+</html>

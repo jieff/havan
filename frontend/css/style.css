@@ -1,0 +1,18 @@
+
+.fcadastro{
+    height: 70vh;
+    background-color: #4169E1;
+    width: 380px;
+    margin: 10px 0 0 500px;
+    clear: both;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.labelColor{
+    color: aliceblue;
+}
+h5{
+ text-align: center;
+}
+

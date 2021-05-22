@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Meta Tags requerida-->
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!--Bootstrap-->
+  <link rel="stylesheet" type="text/css" href="./frontend/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="./frontend/css/style.css">
+  
+  <script type="text/javascript" src="./frontend/js/bootstrap.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+</head>
+
+<body>
+
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="">Jornada Labs HAVAN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link" href="#">|</a>
+          </li>
+
+          <!--Faz a inserção dos registros no banco de dados-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Cadastrar
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="./backend/view/cadastraOperacao.php">Operações</a></li>
+              <li><a class="dropdown-item" href="./backend/view/cadastraMoedas.php">Valores | <b>BONUS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">&nbsp;&nbsp;</a>
+          </li>
+
+          <!--lista os registros no banco de dados-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Listar
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="./backend/view/listaOperacoes.php">Operações</a></li>
+              <li><a class="dropdown-item" href="./backend/view/listarMoedas.php">Valores de Conversão</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+            </ul>
+          </li>
+
+          <!--Pessquisar por nome-->
+          <li class="nav-item">
+            <a class="nav-link" href="#">&nbsp;&nbsp;</a>
+          </li>
+          <li class="nav-item">
+            <form class="d-flex" action="./backend/view/pesquisaNome.php" method="POST">
+              <div class="input-group">
+                <input type="text" class="form-control form-control-sm" name="pesquisar"
+                  placeholder="consulta por cliente">
+                <span class="input-group-text-sm">
+                  <button class="btn btn-primary btn-sm" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-search" viewBox="0 0 16 16">
+                      <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                  </button></span>
+              </div>
+            </form>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">&nbsp;&nbsp; | &nbsp;&nbsp;</a>
+          </li>
+
+          <!--Realizar pesquisa por intervalo de tempo-->
+          <li class="nav-item">
+            <a class="nav-link">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-calendar2-week-fill" viewBox="0 0 16 16">
+                <path
+                  d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zm9.954 3H2.545c-.3 0-.545.224-.545.5v1c0 .276.244.5.545.5h10.91c.3 0 .545-.224.545-.5v-1c0-.276-.244-.5-.546-.5zM8.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM3 10.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z" />
+              </svg></p></a>
+            <form style="display: none" class="form-control" action="./backend/view/pesquisaData.php" method="POST">
+              <legend>Consulta por Intervalo de Tempo</legend>
+              <input class="form-control" type="date" name="data1">
+              <input class="form-control" type="date" name="data2">
+              <div class="d-grid gap-2">
+                <input class="btn btn-primary btn-sm" type="submit" value="Pesquisar">
+              </div>
+            </form>
+          </li>
+
+          <!--Calculadora-->
+          <li class="nav-item">
+            <a class="nav-link" href="./frontend/calculadora.html">
+              &nbsp;&nbsp;&nbsp;
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-calculator-fill" viewBox="0 0 16 16">
+                <path
+                  d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 .5v2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5zm0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 12.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM7 9.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM10 6.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-1z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <img src="havan.png">
+
+
+  <!--JQuery, efeito para o campo pesquisar por intervalo-->
+  <script>
+    $("p").click(function () {
+      $("form").toggle();
+    });
+  </script>
+</body>
+
+</html>
