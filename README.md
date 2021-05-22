@@ -88,7 +88,13 @@ $ git clone https://github.com/jieff/havan.git
 
 ## Recursos
 
-​     Inicialmente o sistema permite cadastrar anúncios, com os campos nome do anúncio, cliente, data de inicio e data de termino, realizar consultas dos anúncios cadastrados e fornecer um relatório contendo o valor investido, a quantidade máxima de visualizações, quantidade máxima de cliques e quantidade máxima de compartilhamentos. Os relatórios poderão ser filtrados por intervalo de tempo e cliente.     
+* Tela de cadastro de operações de câmbio
+* Tela de Cadastro de cotação diária de moeda
+* Lista de operações de Câmbio
+* Lista de moedas cadastradas
+* Consulta com filtro por nome do cliente
+* Consulta com filtro por intervalo de data
+* Calculadora de moedas
 
 ## Contribuições
 
